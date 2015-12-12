@@ -41,7 +41,7 @@ func NewMiddleware(
 		return http.HandlerFunc(
 			func(w http.ResponseWriter, r *http.Request) {
 				if c.Env == nil {
-					c.Env = make(map[string]interface{})
+					c.Env = make(map[interface{}]interface{})
 				}
 				v := CValue{}
 				t := tokenFunc(c, r)
